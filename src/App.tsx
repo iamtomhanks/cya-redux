@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Die } from './Components/Die';
 import './App.css';
+import { Score } from './Components/Score';
 
-function App() {
+const App = ({}) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Score />
+      <div className="dice-container">
+        <Die curPosition={6} onClick={() => alert('dice 1')} />
+        <Die curPosition={4} onClick={() => alert('dice 2')} />
+        <Die curPosition={1} onClick={() => alert('dice 3')} />
+      </div>
     </div>
   );
-}
+}; 
 
 export default App;
